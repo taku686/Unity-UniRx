@@ -24,7 +24,7 @@ public class EnemyManager : MonoBehaviour
         _enemies.Clear();
 
         StopAllCoroutines();
-
+        StartCoroutine(EnemySpawnCorutine());
 
     }
 

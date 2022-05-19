@@ -284,7 +284,7 @@ MonoBehaviour:
   _shellPrefab: {fileID: 7845051951843120703, guid: c86c32ff7fb74d64ba18ea84cac7ea83,
     type: 3}
   _shotPos: {fileID: 9188026781396461058}
-  _shotForce: {x: 0, y: 0, z: 5}
+  _shotForce: {x: 0, y: 0, z: 30}
 --- !u!114 &6577478566849980178
 MonoBehaviour:
   m_ObjectHideFlags: 0

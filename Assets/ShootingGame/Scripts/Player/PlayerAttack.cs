@@ -29,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
     private void Shot()
     {
         GameObject shell = Instantiate(_shellPrefab.gameObject);
-        ShellCore shellCore = new ShellCore(_attackPower);
+        shell.GetComponent<ShellCore>().Initialize(_attackPower);
         shell.transform.position = _shotPos.position;
         shell.GetComponent<Rigidbody>().AddForce(_shotForce, ForceMode.Impulse);
 

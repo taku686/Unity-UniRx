@@ -9,13 +9,16 @@ public class ShellCore : MonoBehaviour
 
     [SerializeField] private Collider _collider;
     private int _damageValue = 0;
-    public ShellCore(int damagevalue)
-    {
-        _damageValue = damagevalue;
-    }
+    
     private void Start()
     {
-        
+        _collider.GetComponent<Collider>();
+        SubscribeColliderEvent();
+    }
+
+    public void Initialize(int damageValue)
+    {
+        _damageValue = damageValue;
     }
 
     private void SubscribeColliderEvent()
@@ -26,6 +29,7 @@ public class ShellCore : MonoBehaviour
                 if (!x.TryGetComponent<IDamageApplicable>(out var d)) return;
 
                 d.ApplyDamage(new Damage(_damageValue));
+                Destroy(this.gameObject);
             }).AddTo(this);
     }
 }
